@@ -1,16 +1,30 @@
-# This is a sample Python script.
+print('Игра «Угадай число»')
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+# Программа-игра запрашивает у пользователя число до тех пор,
+# пока он его не отгадает.
+# Выводятся сообщения в соответствии с примером.
 
+# Пример (загадали число 7):
+# Введите число: 3
+# Число меньше, чем нужно. Попробуйте ещё раз!
+# Введите число: 10
+# Число больше, чем нужно. Попробуйте ещё раз!
+# Введите число: 8
+# Число больше, чем нужно. Попробуйте ещё раз!
+# Введите число: 7
+# Вы угадали! Число попыток: 4
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+number_hidden = 7
+number_input = int(input('Введите число: '))
 
+counter = 1
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+while number_input != number_hidden:
+    if number_input < number_hidden:
+        print('Число меньше, чем нужно. Попробуйте ещё раз!')
+    else:
+        print('Число больше, чем нужно. Попробуйте ещё раз!')
+    number_input = int(input('Введите число: '))
+    counter += 1
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+print('Вы угадали! Число попыток:', counter)
